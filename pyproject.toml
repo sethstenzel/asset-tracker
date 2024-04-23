@@ -1,0 +1,8 @@
+[project]
+name = "asset-tracker"
+version = "0.1.0"
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+pythonpath = ['src']
+testpaths = ['tests']
