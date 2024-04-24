@@ -1,0 +1,8 @@
+test_dir
+test_file.dat
+*.test
+test*wildcard.txt
+testwildcardpost*
+!testfile.skip
+!excluded_subdir_parent/excluded_subdir
+excluded_subdir_parent

@@ -1,5 +1,7 @@
 from unittest.mock import patch
 from functions.path_tools import get_launch_directory
+from functions.path_tools import get_all_files_details
+import pytest
 
 
 def test_get_launch_directory_frozen():
@@ -30,3 +32,10 @@ def test_get_launch_directory_not_frozen():
 
         mock_getcwd.assert_called_once()
         assert launch_directory == "/current/working/directory"
+
+
+@pytest.mark.skip(reason="no way of currently testing this")
+def test_get_all_files_details():
+    # Test when the function is called
+    result = get_all_files_details()
+    assert result != None
