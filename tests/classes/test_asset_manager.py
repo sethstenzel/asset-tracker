@@ -71,7 +71,9 @@ def test_asset_manager_get_asset_includes_not_found():
     with mock.patch.object(
         asset_manager, "asset_includes_file", new="non_existent_file"
     ):
-        assert asset_manager._get_asset_includes() == []
+        actual_includes = len(asset_manager._get_asset_includes())
+        expected_includes = 0
+        assert actual_includes == expected_includes
 
 
 def test_asset_manager_get_asset_includes():
@@ -81,6 +83,7 @@ def test_asset_manager_get_asset_includes():
         mock.mock_open(read_data=MOCK_ASSET_INCLUDES),
     ):
         asset_manager = AssetManager()
-        expected_includes = 9
-        includes = len(asset_manager._get_asset_includes())
-        assert includes == expected_includes
+        includes = asset_manager._get_asset_includes()
+        actual_value = len(includes)
+        expected_value = 9
+        assert actual_value == expected_value
